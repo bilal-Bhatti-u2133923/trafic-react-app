@@ -1,18 +1,18 @@
 import axios, { AxiosError } from "axios";
 
-const API_URL = "https://super-space-spork-jjrj4xjvjw762945-3000.app.github.dev/api";/**add https://  */
+const API_URL = "https://zany-capybara-4j69q695rw5f7pwj-3000.app.github.dev/api";/**add https://  */
 
-export const getWeatherData = async (city: string): Promise<WeatherData> => {
-  return new Promise<WeatherData>((resolve, reject) => {
+export const getTrafficData = async (city: string): Promise<TrafficData> => {
+  return new Promise<TrafficData>((resolve, reject) => {
     axios
-      .get(`${API_URL}/weather/${city}`)
+      .get(`${API_URL}/Traffic/${city}`)
       .then((res) => {
         resolve({
           city: city,
-          temperature: res.data.temperature,
-          humidity: res.data.humidity,
-          wind: res.data.wind,
+          Traffic: res.data.Traffic,
           rain: res.data.rain,
+          wind: res.data.wind,
+          sun: res.data.sun,
         });
       })
       .catch((error) => {

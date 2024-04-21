@@ -8,20 +8,20 @@ import {
   Button,
 } from "@nextui-org/react";
 import { useState } from "react";
-import { TiWeatherDownpour, TiWeatherSunny } from "react-icons/ti";
-import { getWeatherData } from "../api/actions";
+import { TiTrafficDownpour, TiTrafficSunny } from "react-icons/ti";
+import { getTrafficData } from "../api/actions";
 
-const WeatherCard: React.FC = () => {
-  const [data, setData] = useState<WeatherData>();
+const TrafficCard: React.FC = () => {
+  const [data, setData] = useState<TrafficData>();
   const [loadingState, setLoadingState] = useState(false);
   const [city, setCity] = useState("");
   const [error, setError] = useState("");
 
   const handleSearch = () => {
-    console.log("Fetching Weather Data...");
+    console.log("Fetching Traffic Data...");
     console.log(city);
     setLoadingState(true);
-    getWeatherData(city)
+    getTrafficData(city)
       .then((res) => {
         setError("");
         if (res) {
@@ -73,19 +73,19 @@ const WeatherCard: React.FC = () => {
         <CardBody>
           <div className="flex flex-col items-center">
             <h1 className="text-3xl font-bold">{data.city}</h1>
-            {data.temperature > 20 ? (
+            {data.Traffic > 20 ? (
               <div>
-                <TiWeatherSunny className="w-36 h-36" />
+                <TiTrafficSunny className="w-36 h-36" />
               </div>
             ) : (
               <div>
-                <TiWeatherDownpour className="w-36 h-36" />
+                <TiTrafficDownpour className="w-36 h-36" />
               </div>
             )}
-            <p className="text-3xl font-bold">{data.temperature}°C</p>
-            <p className="text-lg">Humidity: {data.humidity}%</p>
-            <p className="text-lg">Wind: {data.wind} km/h</p>
-            <p className="text-lg">Rain: {data.rain} %</p>
+            <p className="text-3xl font-bold">{data.Traffic}°C</p>
+            <p className="text-lg">rain: {data.rain}%</p>
+            <p className="text-lg">wind: {data.wind} km/h</p>
+            <p className="text-lg">sun: {data.sun} %</p>
           </div>
         </CardBody>
       ) : (
@@ -111,4 +111,4 @@ const WeatherCard: React.FC = () => {
   );
 };
 
-export default WeatherCard;
+export default TrafficCard;
