@@ -8,7 +8,7 @@ import {
   Button,
 } from "@nextui-org/react";
 import { useState } from "react";
-import { TiTrafficDownpour, TiTrafficSunny } from "react-icons/ti";
+import { TiWeatherDownpour, TiWeatherSunny } from "react-icons/ti";
 import { getTrafficData } from "../api/actions";
 
 const TrafficCard: React.FC = () => {
@@ -75,11 +75,11 @@ const TrafficCard: React.FC = () => {
             <h1 className="text-3xl font-bold">{data.city}</h1>
             {data.Traffic > 20 ? (
               <div>
-                <TiTrafficSunny className="w-36 h-36" />
+                <TiWeatherSunny className="w-36 h-36" />
               </div>
             ) : (
               <div>
-                <TiTrafficDownpour className="w-36 h-36" />
+                <TiWeatherDownpour className="w-36 h-36" />
               </div>
             )}
             <p className="text-3xl font-bold">{data.Traffic}°C</p>
