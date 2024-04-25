@@ -1,5 +1,8 @@
 # Sample React App with Next UI
 
+##update url
+
+
    ```bash
    npm install
    ```
@@ -8,4 +11,4 @@
    npm run dev
    ```
 
-   https://stackoverflow.com/questions/62208815/network-error-from-using-localhost-when-web-app-is-launched-with-netlify 
+   
