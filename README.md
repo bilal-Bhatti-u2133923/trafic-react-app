@@ -1,6 +1,6 @@
 # Sample React App with Next UI
 
-##update url
+## update url
 
 
    ```bash
