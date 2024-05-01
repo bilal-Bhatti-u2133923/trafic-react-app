@@ -31,3 +31,30 @@ export const getTrafficData = async (city: string): Promise<TrafficData> => {
       });
   });
 };
+
+export const getGameData = async (usernumber: number): Promise<gameData> => {
+  return new Promise<gameData>((resolve, reject) => {
+    axios
+      .get(`${API_URL}/game/${usernumber}`)
+      .then((res) => {
+        resolve({
+          icon: res.data.icon,
+          iconName: res.data.iconName,
+        });
+      })
+      .catch((error) => {
+        if (axios.isAxiosError(error)) {
+          const axiosError = error as AxiosError;
+          if (axiosError.response?.status === 404) {
+            reject("level not found");
+          } else {
+            // It's a good practice to reject with an Error object
+            reject(axiosError.message);
+          }
+        } else {
+          // Handle non-Axios errors
+          reject("An unknown error occurred");
+        }
+      });
+  });
+};
