@@ -17,7 +17,7 @@ import { getGameData } from "../api/actions";
 const GameCard: React.FC = () => {
     const [data, setData] = useState<gameData>();
     const [loadingState, setLoadingState] = useState(false);
-    const [UserNumber, SetUserNumber] = useState<number>(0);
+    const [UserNumber, SetUserNumber] = useState ("0");
     const [error, setError] = useState("");
     const [anser, setAnser] = useState("");
     
@@ -80,7 +80,11 @@ const GameCard: React.FC = () => {
               <h1 className="text-3xl font-bold">guess the icon</h1>
               
                 <div>
-                  {data.icon}
+                {data.iconName === "FaFlag" && <FaFlag className="w-36 h-36"/>}
+                {data.iconName === "car" && <FaCarSide className="w-36 h-36"/>}
+                {data.iconName === "rain" && <FaCloudShowersWater className="w-36 h-36"/>}
+                {data.iconName === "plane" && <FaPlaneDeparture className="w-36 h-36"/>}
+
                 </div>
             </div>
           </CardBody>

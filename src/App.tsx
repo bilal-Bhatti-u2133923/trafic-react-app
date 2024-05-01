@@ -1,6 +1,8 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
 import TrafficCard from "./components/TrafficCard";
+import GameCard from "./components/gameCard";
+
 
 const App = () => {
   return (
@@ -8,6 +10,7 @@ const App = () => {
       <NavBar />
       <div className="flex flex-1 overflow-auto flex-row items-center align-middle justify-center  h-full w-full">
         <TrafficCard />
+        <GameCard />
       </div>
     </div>
   );
