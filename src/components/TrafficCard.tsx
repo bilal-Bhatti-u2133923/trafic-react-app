@@ -75,7 +75,8 @@ const TrafficCard: React.FC = () => {
             <h1 className="text-3xl font-bold">{data.city}</h1>
             {data.Traffic > 50 ? (
               <div>
-                <FaCarSide className="w-30 h-30" /><FaCarSide className="w-30 h-30"  />
+                <FaCarSide className="w-30 h-30" />
+                <FaCarSide className="w-30 h-30" />
               </div>
             ) : (
               <div>

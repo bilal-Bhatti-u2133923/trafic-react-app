@@ -1,6 +1,7 @@
 import axios, { AxiosError } from "axios";
 
-const API_URL = "https://zany-engine-pvvgrwjjgqjfqp9-3000.app.github.dev/api";/**add https://  */
+const API_URL =
+  "https://zany-engine-pvvgrwjjgqjfqp9-3000.app.github.dev/api"; /**add https://  */
 
 export const getTrafficData = async (city: string): Promise<TrafficData> => {
   return new Promise<TrafficData>((resolve, reject) => {
@@ -32,7 +33,7 @@ export const getTrafficData = async (city: string): Promise<TrafficData> => {
   });
 };
 
-export const getGameData = async (usernumber: string ): Promise<gameData> => {
+export const getGameData = async (usernumber: string): Promise<gameData> => {
   return new Promise<gameData>((resolve, reject) => {
     axios
       .get(`${API_URL}/game/${usernumber}`)
