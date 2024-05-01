@@ -43,6 +43,8 @@ const GameCard: React.FC = () => {
         });
     };
 
+  
+
     return (
       <Card className="max-w-[400px]">
         <CardHeader className="flex gap-3">
@@ -86,7 +88,8 @@ const GameCard: React.FC = () => {
                 {data.iconName === "plane" && <FaPlaneDeparture className="w-36 h-36"/>}
 
                 </div>
-            </div>
+                
+                </div>
           </CardBody>
           ) : (
           <CardBody>
